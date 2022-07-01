@@ -14,8 +14,6 @@ function ReadJsonFile($jobj) {
         #$content = ReadFile $path
         return ConvertFrom-Json -InputObject $jobj
 }
-#$folder=Read-Host "folder please"
-#cd $folder
 $bvid=Read-Host "BVid Please"
 $link="https://api.bilibili.com/x/web-interface/view?bvid="+$bvid
 $resp = ReadJsonFile (Invoke-WebRequest $link -MaximumRedirection 0 -ErrorAction Ignore -UseBasicParsing).Content
@@ -26,9 +24,9 @@ $cidList=$resp.data.pages#
 foreach ($cidArry in $cidList) {
     #cidArry=$cidList[i]
     $title=$cidArry.part
-    #if ($cidList.count -eq 1){
-    #    $title=$resp.data.title
-    #}
+    if ($cidList.count -eq 1){
+        $title=$resp.data.title
+        }
     $cid=$cidArry.cid
     #$imgurl=cidArry.first_frame
     $vidapilink="https://api.bilibili.com/x/player/playurl?avid=$avid&cid=$cid&fnval=80"
@@ -38,8 +36,8 @@ foreach ($cidArry in $cidList) {
     #$url=Read-Host "Enter the URL of the file you want to download"
     #Down-Video $imgurl "./$title.jpg"
     Write-Host "Downloading" $title -ForegroundColor Green
-    Down-Video $audiourl "./resptmp.m4s"
+    Down-Video $audiourl "./$title.ogg"
     #$file_title=$title -replace '\s',''
-    ffmpeg -i "./resptmp.m4s" "./$title.mp3"
-    del "./resptmp.m4s"
+    #ffmpeg -i "./resptmp.m4s" "./$title.mp3"
+    #del "./resptmp.m4s"
     }
