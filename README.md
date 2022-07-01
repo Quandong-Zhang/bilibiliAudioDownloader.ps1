@@ -12,8 +12,6 @@ bilibiliAudioDownloader.ps1 BV1cY41177SS
 ```
 或者直接双击run.cmd之后输入bv号
 <h3>注：普通Windows系统需要先更改组策略允许运行power shell脚本，Windows sever应该是默认允许运行脚本的。</h3></br>
-用管理员权限打开power shell，然后输入：
-```
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-```
+用管理员权限打开power shell，然后输入 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned 
 <h2>P.S.power shell的速度实在太香了吧，甩python的you-get几十条街。</h2>
