@@ -1,5 +1,6 @@
 # bilibiliAudioDownloader.ps1
 基于power shell的b站视频音轨下载器（支持多P）。对被压制成视频的ost之类的音乐专辑有奇效（doge）
+## 已使用python重写([参见](https://github.com/Quandong-Zhang/BilibiliAudioDownloader-rebuild/))。
 ## 好处
 1.无需安装环境，是个Windows系统的机器都能跑 </br>
 2.有助于戒掉编程(终于没有理由不卸载python了），专心学习233333
